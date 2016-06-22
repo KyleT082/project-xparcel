@@ -1,4 +1,6 @@
 <?php
+/* function is used to connect to the users database*/
+
 	function connect(){
 		try {
 				# MySQL with PDO_MYSQL                                           
@@ -7,7 +9,7 @@
 			catch(PDOException $e) {
 				die("ERROR : " .$e->getMessage());
 			}
-
+		//returns the PDO connection to be used in other functions
 		return $DBH;
 	}
 ?>

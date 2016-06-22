@@ -2,11 +2,10 @@
 <html>
 <?php 
    session_start(); 
+   include "php/googleSign.php";
 ?>
-
-
-
    <head>
+     <title>Xpacrel Register</title>
      <meta charset="UTF-8">
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
@@ -30,10 +29,8 @@
          </div>
          <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-               <li class="Home"><a href="index.php">Home</a></li>
-               <li><a href="#registrationPage">Sign Up</a></li>
-               <li><a href="#contactUs">Contact Us</a></li>
-               <li><a href="#aboutUs">About Us</a></li>
+               <li class="Home"><a href="http://localhost/xparcel/index.php">Home</a></li>
+               <li><a href="about.php">About Us</a></li>
             </ul>
          </div>
       </nav>
@@ -49,7 +46,11 @@
          </div>
          <div class="btn-group">
             <a class='btn btn-danger disabled'><i class="fa fa-google-plus" style="width:16px; height:20px"></i></a>
-            <a class='btn btn-danger' href='' style="width:13em;"> Sign up using Google</a>
+            <?php 
+            //loads the url auth fo google login
+            echo $string1;
+            ?>
+            <!--<a class='btn btn-danger' href='' style="width:13em;"> Sign up using Google</a>-->
          </div>
       </div>
       <!-- lines and or -->
@@ -115,30 +116,19 @@
                   <div id="dob" class="form-group form-group-sm">
                      <label class="col-sm-6 control-label" for="formGroupInputSmall">Date of birth </label>
                      <!-- Day -->
-                     <div id="day" class="col-sm-4">
+                     <div id="day" class="col-sm-2">
                         <input class="form-control" type="text" id="DOB_Day" placeholder="DD">
                      </div>
                      <!-- Month -->
-                     <div id="month" class="col-sm-4">
+                     <div id="month" class="col-sm-2">
                         <input class="form-control" type="text" id="DOB_Mon" placeholder="MM">
                      </div>
                      <!-- Year -->
-                     <div id="year" class="col-sm-4">
+                     <div id="year" class="col-sm-2">
                         <input class="form-control" type="text" id="DOB_Yr" placeholder="YYYY">
                      </div>
                   </div>
-                  <!-- Gender -->
-                  <div class="form-group form-group-sm">
-
-                     <label id="gender" class="control-label col-sm-6" for="formGroupInputSmall">Gender </label>
-                     <label class="control-label col-sm-3"> Male
-                           <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="Male">
-                     </label>
-                     <label class="control-label col-sm-3"> Female
-                           <input type="radio" name="blankRadio" id="blankRadio1" value="option2" aria-label="Female">
-                     </label>
-                     
-                  </div>
+                 
                </form>
             </div>
          </div>

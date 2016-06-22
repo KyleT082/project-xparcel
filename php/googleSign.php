@@ -64,9 +64,12 @@
 
 	//if the auth account is not set go back to the sign in page.
 	if(isset($authUrl)){
-		//$string = "<a class = 'login' href = '".$authUrl."'><img src=gplus_lib/g_sign.png' height = '10px'/>";
+		//for the index page google login button
 		$string = "<a href='".$authUrl."' class='button red'><img src ='img/g_sign.png'>Sign in</a>";
-
+		//for the register page google signin button
+		$string1 ="<a class='btn btn-danger' href='".$authUrl."' style='width:13em;'> Sign up using Google</a>";
+		//
+		$string2 = "<a href ='".$authUrl."''><div class='col-sm-4 plus'><i class='fa fa-google-plus fa-5x'></i></div></a>";
 	}else{
 
 		//to keep the button visible on index.page after signin
@@ -87,15 +90,16 @@
 
 	    	//return the usersID
 	    	returnID($email);
+	    	$_SESSION['$email'] = $email;
 	    	//send to manage.php page
 	    	header("location:http://localhost/xparcel/manageParcel.php?");
-	    	echo "It's TRUE";
 
 	    }
 	    else if($alive == FALSE){
 
 	    	//add Google details to DB
 	    	addGgleAccDB($email,$id);
+	    	$_SESSION['$email'] = $email;
 
 	    	//send to the register page
 	    	header("location:http://localhost/xparcel/gRegistrationPage.php?");
@@ -160,13 +164,14 @@
 
 		$sth->bindParam(1,$userID,PDO::PARAM_INT);
 		$sth->bindParam(2,$email,PDO::PARAM_INT);
-		$sth->bindParam(3,$id,PDO::PARAM_INT);
+		$sth->bindParam(3,md5($id),PDO::PARAM_INT);
 
 		$sth->execute();
 
-		$userID = $DBH->lastInsertId();
+		$user = $DBH->lastInsertId();
 
 		//used for identifying user through outa session
-		$_SESSION['$userID'] = $userID;
+		$_SESSION['$userID'] = $user;
+		
 	}
 ?>

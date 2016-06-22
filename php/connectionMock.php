@@ -1,4 +1,8 @@
 <?php
+/* function is used to connect to the simulation database 
+	used to store the orignally generated Tracking numbers 
+	and the intial details when the order was placed*/
+	
 	function connectMock(){
 		try {
 				# MySQL with PDO_MYSQL                                           

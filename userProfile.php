@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <?php
+      include "php/getProfileDetails.php";
+   ?>
      <meta charset="UTF-8">
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
@@ -11,12 +14,14 @@
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="css/userProfile.css">
       <script src="userPhotoUpload.js"></script>
+      
 
    </head>
    <body>
       <!-- Nav -->
       <nav class="navbar navbar-default navbar-fixed-top">
          <div class="navbar-header">
+          <img  id = "logo200" src='img/xparcelLogo200px.png' alt=''>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -25,10 +30,8 @@
          </div>
          <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-               <li class="Home"><a href="index.html">Home</a></li>
-               <li><a href="#registrationPage">Sign Up</a></li>
-               <li><a href="#contactUs">Contact Us</a></li>
-               <li><a href="#aboutUs">About Us</a></li>
+               <li class="Home"><a href="index.php">Home</a></li>
+                 <li><a href="php/logout.php">Log out</a></li>
             </ul>
          </div>
       </nav>
@@ -58,6 +61,9 @@
                <div class="userPhoto">
                   <img src="img/Blue.png" class="img-thumbnail" alt="User profile" width="150" height="180">  
                </div>
+                <div class = "form-inline" id="userDetails">
+                  <?php appendTable(); ?>
+               </div>
                
                <!-- Upload button -->
                <!-- Standar Form -->
@@ -73,62 +79,8 @@
                </form>
                <!-- Info label -->
                
-               <?php
-                
-        
-                try {
-                    $host = 'localhost';
-                    $dbname = 'xParcel';
-                    $user = 'root';
-                    $pass = 'root';
-                    # MySQL with PDO_MYSQL
-                    $DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-                } catch(PDOException $e) {echo 'Error';}  
-            
-                
-                $sql = "SELECT * FROM `User` ;";
-        
                
-                $sth = $DBH->prepare($sql);
-                
-                $profileId   = $_POST['ProfileID'];
-                $userId      = $_POST['UserID'];
-                $username    = $_POST['Username'];
-                $email       = $_POST['Email'];
-                $dob         = $_POST['DOB'];
-
-                    
-                $sth->bindParam( ':ProfileID', $profileId );
-                $sth->bindParam( ':UserID', $userId );
-                $sth->bindParam( ':Username', $username );
-                $sth->bindParam( ':Email', $email );
-                $sth->bindParam( ':DOB', $dob );
-                
-                $sth->execute();
-            
-
-                echo "<table id='page' class='table-bordered' >";
-                
-                echo"<tr><th>ProfileID</th><th>UserID</th><th>Username</th><th>Email</th><th>DOB</th></tr>";
         
-                foreach ($sth as $row)
-                {
-                
-                        echo " <tr class='tb'>
-                                       
-                                    <td>$row[0]</td>
-                                    <td>$row[1]</td>
-                                    <td>$row[2]</td>
-                                    <td>$row[3]</td>
-                                    <td>$row[4]</td>
-
-                                </tr>  ";  
-                                
-                }
-                   
-                echo "</table> </br></br>";
-            
-            ?>
                
       <!-- Term and Conditions -->
       <div class="bottomText">

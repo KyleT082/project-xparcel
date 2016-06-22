@@ -3,7 +3,14 @@ body {
     margin-right: 80px;
     margin-left: 130px;
 }
-
+#userDetails{
+    float: left;
+    margin-top: -157px;
+    margin-left: 256px;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: #368DDC;
+}
 
 /* Top title page */
 .title{
@@ -39,16 +46,18 @@ body {
 /* Profile picture */
 .userPhoto{
     margin-right: 75%;
+    float: left;
 }
 
 #uploadBtn{
     margin-right: 80%;
-    padding-top: 20%;
+    padding-top: 5%;
     padding-bottom: 50px;
+    position: relative;
 }
 
 #chooseF{
-    padding-top: 10%;
+    position: relative;
 }
 
 #js-upload-form{
@@ -148,5 +157,11 @@ body {
     width: 50%;
     text-align: center;
    }
+   #logo200{
+    float: right;
+    padding-right: 45px
+    padding-top: 5px;
+    }
+
 }
 

@@ -2,7 +2,7 @@
 <html>
 <?php
    session_start();
-   echo $_SESSION['$userID'];
+  
 ?>
    <head>
      <meta charset="UTF-8">
@@ -29,9 +29,7 @@
          <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                <li class="Home"><a href="index.php">Home</a></li>
-               <li><a href="#registrationPage">Sign Up</a></li>
-               <li><a href="#contactUs">Contact Us</a></li>
-               <li><a href="#aboutUs">About Us</a></li>
+               <li><a href="about.php">About Us</a></li>
             </ul>
          </div>
       </nav>
@@ -98,15 +96,15 @@
                   <div id="dob" class="form-group form-group-sm">
                      <label class="col-sm-6 control-label" for="formGroupInputSmall">Date of birth </label>
                      <!-- Day -->
-                     <div id="day" class="col-sm-4">
+                     <div id="day" class="col-sm-2">
                         <input class="form-control" type="text" id="DOB_Day" placeholder="DD">
                      </div>
                      <!-- Month -->
-                     <div id="month" class="col-sm-4">
+                     <div id="month" class="col-sm-2">
                         <input class="form-control" type="text" id="DOB_Mon" placeholder="MM">
                      </div>
                      <!-- Year -->
-                     <div id="year" class="col-sm-4">
+                     <div id="year" class="col-sm-2">
                         <input class="form-control" type="text" id="DOB_Yr" placeholder="YYYY">
                      </div>
                   </div>

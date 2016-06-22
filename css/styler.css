@@ -54,28 +54,6 @@ body {
     margin-right: 70%;
 }
 
-#day{
-    padding-right: 140px;
-    margin-right: -20%;
-}
-
-#month{
-    margin-right: -180px;
-    padding-right: 140px;
-}
-
-#year{
-    margin-right: -10%;
-    padding-left: 90px;
-    
-}
-
-/* Gender */
-#gender{
-    margin-right: -40px;
-    padding-right: 20px;
-}
-
 #blankRadio1{
     margin-left: 10%;
 }

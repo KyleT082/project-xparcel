@@ -6,7 +6,7 @@
     include "php/googleSign.php";
     ?>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Xparcel Tracking</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -22,7 +22,6 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          
           <!-- Login Dropdown - Facebook and Twitter -->
           <div class="login">
             <?php
@@ -86,13 +85,10 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="about.php" >About Us</a></li>
           </ul>
         </div>
-        
       </nav>
-      
     </body>
     <div id="box">
       
@@ -122,9 +118,9 @@
     <div class="container-fluid pack">
       <div class="row-eq-height">
         <div class="col-sm-6 cell1">
-          <div class="textid"> <h3>Manage Your Packets</h3>
+          <div class="textid"> <h3>Manage Your Parcels</h3>
             <br>
-            <p>Add more than one parcel, change date and/or location.</p>
+            <p>Different parcels from different websites? Something happened and you need to change the date ,time or location? No problem! Xparcel Package managment system can handle more than one parcel and allow you to convieniantly control your delivery</p>
           </div>
         </div>
         <div class="col-sm-6 cell2">
@@ -155,7 +151,10 @@
           <div class="row">
             <div class="col-sm-4 face"><i class="fa fa-facebook fa-5x"></i></div>
             <div class="col-sm-4 twit"><i class="fa fa-twitter fa-5x"></i></div>
-            <div class="col-sm-4 plus"><i class="fa fa-google-plus fa-5x"></i></div>
+            <?php
+            //calls google signin auth url
+             echo $string2; ?>
+            <!--<div class="col-sm-4 plus"><a href =""><i class="fa fa-google-plus fa-5x"></i></a></div>-->
           </div>
         </div>
       </div>
@@ -163,15 +162,15 @@
         <div class="row ">
           <div class="col-sm-4 textabout">
             <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique.</p>
+            <p>Xparcel Managment System is a unique tool focused to increase customer service and also reduce CO2 emissions.</p>
           </div>
           <div class="col-sm-4 textabout">
             <h3>Who are we?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique.</p>
+            <p>We are a group of 3rd year students, enrolled at Collage of Computer Technology</p>
           </div>
           <div class="col-sm-4 textabout">
             <h3>Who do we want to be?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique.</p>
+            <p>Greater, better and simpler</p>
           </div>
         </div>
       </div>
