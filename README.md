@@ -5,6 +5,7 @@ We wanted to try and improve Package delivery web applications like UPS and DPD 
 update delivery address and time.  
 
 A demo of the landing page can be found at the following link. https://kylet082.github.io/project/
+### PLease note the links and anchors do not work in the above link
 
 #### Demo of the User panel
 
